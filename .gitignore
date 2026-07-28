@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# SQLite
+*.db
+
+# AI Models
+models/
+
+# Temporary
+*.tmp
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Environment
+.env
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/

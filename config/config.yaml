@@ -1,0 +1,12 @@
+app:
+  name: Xfinity AI
+  version: 0.1.0
+
+workspace:
+  root: ~/Development
+
+models:
+  default: qwen3b
+
+logging:
+  level: INFO

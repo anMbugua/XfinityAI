@@ -1,18 +1,44 @@
 from rich.console import Console
 
+from xfinity_ai.core.service_registry import ServiceRegistry
+from xfinity_ai.core.lifecycle import Lifecycle
+from xfinity_ai.utils.logger import Logger
+
 
 class Kernel:
-    """
-    Core bootstrapper for Xfinity AI.
-    """
 
     def __init__(self):
+
         self.console = Console()
 
+        self.registry = ServiceRegistry()
+
+        self.lifecycle = Lifecycle()
+
+
     def boot(self):
+
         self.console.rule("[bold cyan]Xfinity AI")
-        self.console.print("[green]✓ Configuration Loaded")
-        self.console.print("[green]✓ Logger Initialized")
-        self.console.print("[green]✓ Kernel Started")
+
+        logger = Logger()
+
+        self.registry.register(
+            "logger",
+            logger
+        )
+
+        self.lifecycle.start()
+
+        logger.info(
+            "Logger initialized"
+        )
+
+        logger.info(
+            "Kernel started"
+        )
+
         self.console.print()
-        self.console.print("[bold green]System Ready.")
+
+        self.console.print(
+            "[bold green]System Ready."
+        )

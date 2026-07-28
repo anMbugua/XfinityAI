@@ -1,6 +1,6 @@
 app:
   name: Xfinity AI
-  version: 0.1.0
+  version: 0.1.1
 
 workspace:
   root: ~/Development
@@ -10,3 +10,6 @@ models:
 
 logging:
   level: INFO
+
+system:
+  mode: development

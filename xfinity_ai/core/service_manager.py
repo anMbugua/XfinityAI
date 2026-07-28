@@ -1,7 +1,9 @@
 from xfinity_ai.utils.logger import Logger
 from xfinity_ai.config.config_manager import ConfigManager
 from xfinity_ai.events.event_bus import EventBus
-
+from xfinity_ai.workspace.workspace_manager import WorkspaceManager
+from xfinity_ai.tools.tool_registry import ToolRegistry
+from xfinity_ai.tools.file_tool import FileTool
 
 class ServiceManager:
 
@@ -19,6 +21,16 @@ class ServiceManager:
 
         events = EventBus()
 
+        workspace = WorkspaceManager(
+            "~/Development"
+        ) 
+        tools = ToolRegistry()
+
+        tools.register(
+            FileTool()
+        )
+
+
 
         self.registry.register(
             "config",
@@ -35,7 +47,16 @@ class ServiceManager:
             events
         )
 
+        self.registry.register(
+            "workspace",
+            workspace
+        )
 
+
+        self.registry.register(
+            "tools",
+            tools
+        )
     def list_services(self):
 
         return self.registry.list_services()

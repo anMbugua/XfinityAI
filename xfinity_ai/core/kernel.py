@@ -57,3 +57,9 @@ class Kernel:
                 self.services.list_services()
             )
         )
+
+        logger.info(
+            str(
+                self.registry.get("tools").list_tools()
+            )
+        )

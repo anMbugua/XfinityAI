@@ -1,6 +1,6 @@
 app:
   name: Xfinity AI
-  version: 0.1.2
+  version: 0.2.0
 
 workspace:
   root: ~/Development

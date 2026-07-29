@@ -5,7 +5,7 @@ from xfinity_ai.tools.file_tool import FileTool
 from xfinity_ai.tools.tool_registry import ToolRegistry
 from xfinity_ai.utils.logger import Logger
 from xfinity_ai.workspace.workspace_manager import WorkspaceManager
-
+from xfinity_ai.runtime.runtime import Runtime
 
 class ServiceManager:
 
@@ -18,6 +18,7 @@ class ServiceManager:
         config.load()
 
         logger = Logger()
+        runtime = Runtime()
 
         events = EventBus()
 
@@ -37,6 +38,9 @@ class ServiceManager:
         self.registry.register("workspace", workspace)
         self.registry.register("hardware", hardware)
         self.registry.register("tools", tools)
-
+        self.registry.register(
+            "runtime",
+            runtime
+        )
     def list_services(self):
         return self.registry.list_services()

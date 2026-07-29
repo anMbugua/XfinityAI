@@ -2,8 +2,7 @@ from rich.console import Console
 
 from xfinity_ai.core.service_registry import ServiceRegistry
 from xfinity_ai.core.lifecycle import Lifecycle
-from xfinity_ai.core.service_manager import ServiceManager
-
+from xfinity_ai.services.manager import ServiceManager
 
 class Kernel:
 

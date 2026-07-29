@@ -4,6 +4,7 @@ from xfinity_ai.events.event_bus import EventBus
 from xfinity_ai.workspace.workspace_manager import WorkspaceManager
 from xfinity_ai.tools.tool_registry import ToolRegistry
 from xfinity_ai.tools.file_tool import FileTool
+from xfinity_ai.system.hardware import HardwareProfile
 
 class ServiceManager:
 
@@ -23,14 +24,22 @@ class ServiceManager:
 
         workspace = WorkspaceManager(
             "~/Development"
-        ) 
+        )
         tools = ToolRegistry()
 
+        hardware = HardwareProfile()
+        hardware.collect()
+
+        tools = ToolRegistry()
         tools.register(
             FileTool()
         )
 
 
+        self.registry.register(
+            "hardware",
+            hardware
+        )
 
         self.registry.register(
             "config",

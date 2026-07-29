@@ -63,3 +63,12 @@ class Kernel:
                 self.registry.get("tools").list_tools()
             )
         )
+        hardware = self.registry.get("hardware")
+
+        logger.info(f"OS: {hardware.get('os')}")
+        logger.info(f"CPU cores: {hardware.get('cpu_cores')}")
+        logger.info(f"Free disk: {hardware.get('disk_free_gb')} GB")
+        logger.info(f"Available ram: {hardware.get('ram_available_gb')}")
+        logger.info(f"Ram_total: {hardware.get('ram_total_gb')}")
+
+

@@ -1,6 +1,19 @@
 # Changelog
 
-## v0.1.2
+## v0.3.0
+
+Added
+
+- Capability Registry
+- Base Service
+- Service Manager
+
+Architecture
+
+- standardized service lifecycle
+- centralized service registration
+
+## v0.2.0
 
 ### Added
 

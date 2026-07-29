@@ -6,7 +6,18 @@ workspace:
   root: ~/Development
 
 models:
-  default: qwen3b
+  local:
+    runtime: llama.cpp
+    executable: /home/xfinity/AI/runtimes/llama.cpp/build/bin/llama-server
+    model: /home/xfinity/AI/models/qwen/qwen2.5-3b-instruct-q4_k_m.gguf
+    threads: 4
+    context: 2048
+    host: 127.0.0.1
+    port: 8080
+
+  cloud:
+    provider: gemini
+    enabled: false
 
 logging:
   level: INFO
